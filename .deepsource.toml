@@ -16,3 +16,4 @@ enabled = true
     "nodejs",
     "browser"
   ]
+  dialect = "typescript"

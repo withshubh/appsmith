@@ -52,7 +52,7 @@ export default function Spinner(props: SpinnerProp) {
       className={Classes.SPINNER}
       size={props.size}
     >
-      <SvgCircle cx="25" cy="25" r="20" fill="none"></SvgCircle>
+      <SvgCircle cx="25" cy="25" r="20" fill="none" />
     </SvgContainer>
   );
 }

@@ -140,7 +140,7 @@ export default function Toggle(props: ToggleProps) {
           onChangeHandler(e.target.checked)
         }
       />
-      <span className="slider"></span>
+      <span className="slider" />
       {props.isLoading ? (
         <div className="toggle-spinner">
           <Spinner />

@@ -116,7 +116,7 @@ export default function Switch(props: SwitchProps) {
           onChangeHandler(e.target.checked);
         }}
       />
-      <span className="slider"></span>
+      <span className="slider" />
       <Light value={value}>
         <Text type={TextType.H6}>Light</Text>
       </Light>

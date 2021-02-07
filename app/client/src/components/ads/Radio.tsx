@@ -147,7 +147,7 @@ export default function RadioComponent(props: RadioProps) {
             checked={selected === option.value}
             name="radio"
           />
-          <span className="checkbox"></span>
+          <span className="checkbox" />
         </Radio>
       ))}
     </RadioGroup>

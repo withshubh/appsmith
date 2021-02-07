@@ -325,7 +325,7 @@ const FilePickerComponent = (props: FilePickerProps) => {
             <Text type={TextType.H6}>{fileInfo.size}KB</Text>
           </div>
           <div className="progress-container">
-            <div className="progress-inner" ref={progressRef}></div>
+            <div className="progress-inner" ref={progressRef} />
           </div>
         </div>
       </div>

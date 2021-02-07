@@ -339,15 +339,9 @@ class DropDownComponent extends React.Component<DropDownComponentProps> {
     const optionIndex = _.findIndex(this.props.options, (option) => {
       return option.value === selectedOption.value;
     });
-    if (this.props.selectionType === "SINGLE_SELECT") {
-      return optionIndex === this.props.selectedIndex;
-    } else {
-      return (
-        _.findIndex(this.props.selectedIndexArr, (index) => {
+    return this.props.selectionType === "SINGLE_SELECT" ? optionIndex === this.props.selectedIndex : (_.findIndex(this.props.selectedIndexArr, (index) => {
           return index === optionIndex;
-        }) !== -1
-      );
-    }
+        }) !== -1);
   };
 
   renderSingleSelectItem = (

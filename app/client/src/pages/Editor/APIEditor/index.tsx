@@ -158,11 +158,7 @@ class ApiEditor extends React.Component<Props> {
 
     let formUiComponent: string | undefined;
     if (apiId) {
-      if (pluginId) {
-        formUiComponent = this.getPluginUiComponentOfId(pluginId, plugins);
-      } else {
-        formUiComponent = this.getPluginUiComponentOfName(plugins);
-      }
+      formUiComponent = pluginId ? this.getPluginUiComponentOfId(pluginId, plugins) : this.getPluginUiComponentOfName(plugins);
     }
 
     const apiHomeScreen = (

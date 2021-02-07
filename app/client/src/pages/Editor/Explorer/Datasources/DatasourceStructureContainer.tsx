@@ -18,12 +18,9 @@ export const DatasourceStructureContainer = memo((props: Props) => {
   let view: ReactNode = <div />;
 
   if (!isLoading) {
-    if (
-      props.datasourceStructure &&
+    view = props.datasourceStructure &&
       props.datasourceStructure.tables &&
-      props.datasourceStructure.tables.length
-    ) {
-      view = props.datasourceStructure.tables.map(
+      props.datasourceStructure.tables.length ? props.datasourceStructure.tables.map(
         (structure: DatasourceTable) => {
           return (
             <DatasourceStructure
@@ -34,14 +31,9 @@ export const DatasourceStructureContainer = memo((props: Props) => {
             />
           );
         },
-      );
-    } else {
-      view = (
-        <EntityPlaceholder step={props.step + 1}>
+      ) : (<EntityPlaceholder step={props.step + 1}>
           No information available
-        </EntityPlaceholder>
-      );
-    }
+        </EntityPlaceholder>);
   }
 
   return <>{view}</>;

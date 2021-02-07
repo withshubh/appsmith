@@ -181,16 +181,11 @@ class ChartComponent extends React.Component<ChartComponentProps> {
   };
 
   getChartDataSource = () => {
-    if (
-      this.props.chartData.length <= 1 ||
-      this.props.chartType === "PIE_CHART"
-    ) {
-      return {
+    return this.props.chartData.length <= 1 ||
+      this.props.chartType === "PIE_CHART" ? {
         chart: this.getChartConfig(),
         data: this.getChartData(),
-      };
-    } else {
-      return {
+      } : {
         chart: this.getChartConfig(),
         categories: [
           {
@@ -199,7 +194,6 @@ class ChartComponent extends React.Component<ChartComponentProps> {
         ],
         dataset: this.getChartDataset(this.props.chartData),
       };
-    }
   };
 
   getScrollChartDataSource = () => {

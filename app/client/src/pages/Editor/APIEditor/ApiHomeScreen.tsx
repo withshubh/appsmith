@@ -786,11 +786,7 @@ const mapStateToProps = (state: AppState) => {
   }
 
   let initialCategoryValue;
-  if (state.ui.apiPane.currentCategory === "") {
-    initialCategoryValue = DEFAULT_PROVIDER_OPTION;
-  } else {
-    initialCategoryValue = state.ui.apiPane.currentCategory;
-  }
+  initialCategoryValue = state.ui.apiPane.currentCategory === "" ? DEFAULT_PROVIDER_OPTION : state.ui.apiPane.currentCategory;
 
   return {
     currentCategory: category,

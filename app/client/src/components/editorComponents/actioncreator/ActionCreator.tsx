@@ -88,11 +88,7 @@ export const modalGetter = (value: string) => {
   let name = "none";
   if (matches.length) {
     const modalName = matches[0][2].split(",")[0];
-    if (IS_URL_OR_MODAL.test(modalName) || modalName === "") {
-      name = modalName.substring(1, modalName.length - 1);
-    } else {
-      name = `{{${modalName}}}`;
-    }
+    name = IS_URL_OR_MODAL.test(modalName) || modalName === "" ? modalName.substring(1, modalName.length - 1) : `{{${modalName}}}`;
   }
   return name;
 };
@@ -101,11 +97,7 @@ const stringToJS = (string: string): string => {
   const { stringSegments, jsSnippets } = getDynamicBindings(string);
   const js = stringSegments
     .map((segment, index) => {
-      if (jsSnippets[index] && jsSnippets[index].length > 0) {
-        return jsSnippets[index];
-      } else {
-        return `'${segment}'`;
-      }
+      return jsSnippets[index] && jsSnippets[index].length > 0 ? jsSnippets[index] : `'${segment}'`;
     })
     .join(" + ");
   return js;
@@ -115,9 +107,7 @@ const JSToString = (js: string): string => {
   const segments = js.split(" + ");
   return segments
     .map((segment) => {
-      if (segment.charAt(0) === "'") {
-        return segment.substring(1, segment.length - 1);
-      } else return "{{" + segment + "}}";
+      return segment.charAt(0) === "'" ? segment.substring(1, segment.length - 1) : "{{" + segment + "}}";
     })
     .join("");
 };

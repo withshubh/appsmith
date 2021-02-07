@@ -253,16 +253,8 @@ export function validateWidgetProperty(
   const validationTypeOrValidator = propertyValidationTypes[property];
   let validator;
 
-  if (typeof validationTypeOrValidator === "function") {
-    validator = validationTypeOrValidator;
-  } else {
-    validator = VALIDATORS[validationTypeOrValidator];
-  }
-  if (validator) {
-    return validator(value, props, dataTree);
-  } else {
-    return { isValid: true, parsed: value };
-  }
+  validator = typeof validationTypeOrValidator === "function" ? validationTypeOrValidator : VALIDATORS[validationTypeOrValidator];
+  return validator ? validator(value, props, dataTree) : { isValid: true, parsed: value };
 }
 
 export function getValidatedTree(

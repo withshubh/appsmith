@@ -262,13 +262,9 @@ export const ApplicationCard = (props: ApplicationCardProps) => {
 
   useEffect(() => {
     let colorCode;
-    if (props.application.color) {
-      colorCode = props.application.color;
-    } else {
-      colorCode = getRandomPaletteColor(
+    colorCode = props.application.color ? props.application.color : getRandomPaletteColor(
         themeDetails.theme.colors.appCardColors,
       );
-    }
     setSelectedColor(colorCode);
   }, [props.application.color]);
   useEffect(() => {
@@ -406,11 +402,7 @@ export const ApplicationCard = (props: ApplicationCardProps) => {
             placeholder={"Edit text input"}
             hideEditIcon={false}
             isInvalid={(value: string) => {
-              if (!value) {
-                return "Name cannot be empty";
-              } else {
-                return false;
-              }
+              return !value ? "Name cannot be empty" : false;
             }}
             savingState={
               isSavingName ? SavingState.STARTED : SavingState.NOT_STARTED

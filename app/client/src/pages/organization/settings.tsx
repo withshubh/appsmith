@@ -99,13 +99,9 @@ export default function Settings() {
           const hasSlash = location.pathname[settingsEndIndex] === "/";
           let newUrl = "";
 
-          if (hasSlash) {
-            newUrl = `${location.pathname.substr(0, settingsEndIndex)}/${
+          newUrl = hasSlash ? `${location.pathname.substr(0, settingsEndIndex)}/${
               tabArr[index].key
-            }`;
-          } else {
-            newUrl = `${location.pathname}/${tabArr[index].key}`;
-          }
+            }` : `${location.pathname}/${tabArr[index].key}`;
           history.push(newUrl);
         }}
       ></TabComponent>

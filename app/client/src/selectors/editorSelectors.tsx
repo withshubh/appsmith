@@ -208,11 +208,7 @@ export const getActionById = createSelector(
   [getActions, (state: any, props: any) => props.match.params.apiId],
   (actions, id) => {
     const action = actions.find((action) => action.config.id === id);
-    if (action) {
-      return action.config;
-    } else {
-      return undefined;
-    }
+    return action ? action.config : undefined;
   },
 );
 

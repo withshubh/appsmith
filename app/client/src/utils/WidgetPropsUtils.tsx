@@ -610,8 +610,7 @@ export const generateWidgetProps = (
     delete props.columns;
     return props;
   } else {
-    if (parent) {
-      throw Error("Failed to create widget: Parent's size cannot be calculate");
-    } else throw Error("Failed to create widget: Parent was not provided ");
+    const error = parent ? Error("Failed to create widget: Parent's size cannot be calculate") : Error("Failed to create widget: Parent was not provided ");
+    throw error;
   }
 };

@@ -122,15 +122,11 @@ export const EntityName = forwardRef(
         newName: string,
         tabs?: Array<{ id: string; widgetId: string; label: string }>,
       ) => {
-        if (tabs === undefined) {
-          return !(
+        return tabs === undefined ? !(
             existingPageNames.indexOf(newName) === -1 &&
             existingActionNames.indexOf(newName) === -1 &&
             existingWidgetNames.indexOf(newName) === -1
-          );
-        } else {
-          return tabs.findIndex((tab) => tab.label === newName) > -1;
-        }
+          ) : tabs.findIndex((tab) => tab.label === newName) > -1;
       },
       [existingPageNames, existingActionNames, existingWidgetNames],
     );

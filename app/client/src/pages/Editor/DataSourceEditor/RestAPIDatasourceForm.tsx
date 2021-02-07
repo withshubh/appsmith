@@ -224,11 +224,7 @@ class DatasourceDBEditor extends React.Component<
           },
         );
 
-        if (newValues.length) {
-          formData = _.set(formData, properties[0], newValues);
-        } else {
-          formData = _.set(formData, properties[0], []);
-        }
+        formData = newValues.length ? _.set(formData, properties[0], newValues) : _.set(formData, properties[0], []);
       } else if (controlType === "KEY_VAL_INPUT") {
         if (checked[configProperty]) continue;
 
@@ -245,11 +241,7 @@ class DatasourceDBEditor extends React.Component<
           },
         );
 
-        if (newValues.length) {
-          formData = _.set(formData, configProperty, newValues);
-        } else {
-          formData = _.set(formData, configProperty, []);
-        }
+        formData = newValues.length ? _.set(formData, configProperty, newValues) : _.set(formData, configProperty, []);
       }
     }
 

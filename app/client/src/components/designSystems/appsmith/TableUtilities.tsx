@@ -484,9 +484,7 @@ export const renderCell = (
             .toString()
             .split(",")
             .map((item: string, index: number) => {
-              if (imageRegex.test(item)) {
-                return (
-                  <a
+              return imageRegex.test(item) ? (<a
                     onClick={(e) => e.stopPropagation()}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -497,27 +495,15 @@ export const renderCell = (
                       className="image-cell"
                       style={{ backgroundImage: `url("${item}")` }}
                     />
-                  </a>
-                );
-              } else {
-                return <div>Invalid Image</div>;
-              }
+                  </a>) : <div>Invalid Image</div>;
             })}
         </CellWrapper>
       );
     case ColumnTypes.VIDEO:
       const youtubeRegex = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=|\?v=)([^#&?]*).*/;
-      if (isString(value) && youtubeRegex.test(value)) {
-        return (
-          <CellWrapper isHidden={isHidden} className="video-cell">
+      return isString(value) && youtubeRegex.test(value) ? (<CellWrapper isHidden={isHidden} className="video-cell">
             <PopoverVideo url={value} />
-          </CellWrapper>
-        );
-      } else {
-        return (
-          <CellWrapper isHidden={isHidden}>Invalid Video Link</CellWrapper>
-        );
-      }
+          </CellWrapper>) : (<CellWrapper isHidden={isHidden}>Invalid Video Link</CellWrapper>);
     default:
       return (
         <AutoToolTipComponent

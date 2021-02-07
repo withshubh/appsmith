@@ -15,11 +15,7 @@ type Props = {
 
 const LandingScreen = (props: Props) => {
   if (props.user && window.location.pathname === BASE_URL) {
-    if (props.user.email === ANONYMOUS_USERNAME) {
-      return <Redirect to={AUTH_LOGIN_URL} />;
-    } else {
-      return <Redirect to={APPLICATIONS_URL} />;
-    }
+    return props.user.email === ANONYMOUS_USERNAME ? <Redirect to={AUTH_LOGIN_URL} /> : <Redirect to={APPLICATIONS_URL} />;
   }
   if (props.authError && props.authError.length) {
     return <ServerUnavailable />;

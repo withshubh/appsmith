@@ -70,22 +70,18 @@ const providersReducer = createReducer(initialState, {
     state: ProvidersReduxState,
     action: ReduxAction<Providers>,
   ) => {
-    if (state.providers.length === 0) {
-      return {
+    return state.providers.length === 0 ? {
         ...state,
         providers: action.payload.providers,
         providersTotal: action.payload.total,
         isFetchingProviders: false,
         isSwitchingCategory: false,
         fetchProvidersError: false,
-      };
-    } else {
-      return {
+      } : {
         ...state,
         providers: [...state.providers, ...action.payload.providers],
         isFetchingProviders: false,
       };
-    }
   },
   [ReduxActionTypes.SET_PROVIDERS_LENGTH]: (state: ProvidersReduxState) => ({
     ...state,

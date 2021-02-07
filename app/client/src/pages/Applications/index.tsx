@@ -385,11 +385,7 @@ function LeftPane() {
     </NewWorkspaceWrapper>
   );
   let userOrgs;
-  if (!isFetchingApplications) {
-    userOrgs = fetchedUserOrgs;
-  } else {
-    userOrgs = loadingUserOrgs as any;
-  }
+  userOrgs = !isFetchingApplications ? fetchedUserOrgs : loadingUserOrgs as any;
 
   const location = useLocation();
   const urlHash = location.hash.slice(1);
@@ -552,29 +548,18 @@ const ApplicationsSection = (props: any) => {
   };
 
   let updatedOrgs;
-  if (!isFetchingApplications) {
-    updatedOrgs = userOrgs;
-  } else {
-    updatedOrgs = loadingUserOrgs as any;
-  }
+  updatedOrgs = !isFetchingApplications ? userOrgs : loadingUserOrgs as any;
 
   let organizationsListComponent;
-  if (
-    !isFetchingApplications &&
+  organizationsListComponent = !isFetchingApplications &&
     props.searchKeyword &&
     props.searchKeyword.trim().length > 0 &&
-    updatedOrgs.length === 0
-  ) {
-    organizationsListComponent = (
-      <CenteredWrapper style={{ flexDirection: "column", marginTop: "-150px" }}>
+    updatedOrgs.length === 0 ? (<CenteredWrapper style={{ flexDirection: "column", marginTop: "-150px" }}>
         <CreateNewLabel type={TextType.H4}>
           Whale! Whale! this name doesn&apos;t ring a bell!
         </CreateNewLabel>
         <NoSearchResultImg src={NoSearchImage} alt="No result found" />
-      </CenteredWrapper>
-    );
-  } else {
-    organizationsListComponent = updatedOrgs.map(
+      </CenteredWrapper>) : updatedOrgs.map(
       (organizationObject: any, index: number) => {
         const { organization, applications, userRoles } = organizationObject;
         const hasManageOrgPermissions = isPermitted(
@@ -758,7 +743,6 @@ const ApplicationsSection = (props: any) => {
         );
       },
     );
-  }
 
   return (
     <ApplicationContainer className="t--applications-container">

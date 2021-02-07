@@ -120,25 +120,18 @@ export const Button = (props: ButtonProps) => {
     skin: props.skin,
     iconAlignment: props.iconAlignment ? props.iconAlignment : undefined,
   };
-  if (props.href) {
-    return (
-      <StyledAnchorButton
+  return props.href ? (<StyledAnchorButton
         icon={icon}
         rightIcon={rightIcon}
         {...baseProps}
         href={props.href}
         target={props.target}
-      />
-    );
-  } else
-    return (
-      <StyledButton
+      />) : (<StyledButton
         rightIcon={rightIcon}
         icon={icon}
         {...baseProps}
         onClick={props.onClick}
-      />
-    );
+      />);
 };
 
 export default Button;

@@ -286,11 +286,7 @@ class CodeEditor extends Component<Props, State> {
     }
     this.editor.focus();
     if (cursor === undefined) {
-      if (value) {
-        cursor = value.length - 2;
-      } else {
-        cursor = 1;
-      }
+      cursor = value ? value.length - 2 : 1;
     }
     this.editor.setCursor({
       line: 0,

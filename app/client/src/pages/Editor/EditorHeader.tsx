@@ -163,25 +163,17 @@ export const EditorHeader = (props: EditorHeaderProps) => {
   if (isSaving) {
     saveStatusIcon = <ThreeDotLoading className="t--save-status-is-saving" />;
   } else {
-    if (!pageSaveError) {
-      saveStatusIcon = (
-        <HeaderIcons.SAVE_SUCCESS
+    saveStatusIcon = !pageSaveError ? (<HeaderIcons.SAVE_SUCCESS
           color={"#36AB80"}
           height={20}
           width={20}
           className="t--save-status-success"
-        />
-      );
-    } else {
-      saveStatusIcon = (
-        <HeaderIcons.SAVE_FAILURE
+        />) : (<HeaderIcons.SAVE_FAILURE
           color={"#F69D2C"}
           height={20}
           width={20}
           className={"t--save-status-error"}
-        />
-      );
-    }
+        />);
   }
 
   const updateApplicationDispatch = (

@@ -23,11 +23,7 @@ export default {
 };
 
 const errorFunction = (name: string) => {
-  if (name === "") {
-    return "Name cannot be empty";
-  } else {
-    return false;
-  }
+  return name === "" ? "Name cannot be empty" : false;
 };
 
 export const MenuStory = () => {

@@ -208,8 +208,7 @@ class DatePickerControl extends BaseControl<
       this.props.widgetProperties.dateFormat || ISO_DATE_FORMAT;
     const date = moment(dateStr, dateFormat);
 
-    if (date.isValid()) return moment(dateStr, dateFormat).toDate();
-    else return moment().toDate();
+    return date.isValid() ? moment(dateStr, dateFormat).toDate() : moment().toDate();
   };
 
   static getControlType() {

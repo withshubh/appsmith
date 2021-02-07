@@ -343,17 +343,13 @@ function* updateDraftsSaga() {
   if (!values.id) return;
   const datasource = yield select(getDatasource, values.id);
 
-  if (_.isEqual(values, datasource)) {
-    yield put({
+  yield (_.isEqual(values, datasource) ? put({
       type: ReduxActionTypes.DELETE_DATASOURCE_DRAFT,
       payload: { id: values.id },
-    });
-  } else {
-    yield put({
+    }) : put({
       type: ReduxActionTypes.UPDATE_DATASOURCE_DRAFT,
       payload: { id: values.id, draft: values },
-    });
-  }
+    }));
 }
 
 function* changeDatasourceSaga(actionPayload: ReduxAction<Datasource>) {
@@ -366,11 +362,7 @@ function* changeDatasourceSaga(actionPayload: ReduxAction<Datasource>) {
   const pageId = yield select(getCurrentPageId);
   let data;
 
-  if (_.isEmpty(draft)) {
-    data = actionPayload.payload;
-  } else {
-    data = draft;
-  }
+  data = _.isEmpty(draft) ? actionPayload.payload : draft;
 
   yield put(initialize(DATASOURCE_DB_FORM, _.omit(data, ["name"])));
   yield put(selectPlugin(pluginId));

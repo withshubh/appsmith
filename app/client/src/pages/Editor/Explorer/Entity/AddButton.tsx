@@ -16,14 +16,9 @@ export const EntityAddButton = (props: {
     props.onClick && props.onClick();
     e.stopPropagation();
   };
-  if (!props.onClick) return null;
-  else {
-    return (
-      <Wrapper onClick={handleClick} className={props.className}>
+  return !props.onClick ? null : (<Wrapper onClick={handleClick} className={props.className}>
         <span>+</span>
-      </Wrapper>
-    );
-  }
+      </Wrapper>);
 };
 
 export default EntityAddButton;

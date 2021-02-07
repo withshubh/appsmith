@@ -463,11 +463,7 @@ export function* refactorActionName(
           actionId: id,
         },
       });
-      if (currentPageId === pageId) {
-        yield updateCanvasWithDSL(refactorResponse.data, pageId, layoutId);
-      } else {
-        yield put(fetchActionsForPage(pageId));
-      }
+      yield (currentPageId === pageId ? updateCanvasWithDSL(refactorResponse.data, pageId, layoutId) : put(fetchActionsForPage(pageId)));
     }
   }
 }

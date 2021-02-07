@@ -389,11 +389,7 @@ class TableWidget extends BaseWidget<TableWidgetProps, WidgetState> {
           filters[i].value,
           filters[i].condition,
         );
-        if (filterOperator === OperatorTypes.AND) {
-          filter = filter && filterValue;
-        } else {
-          filter = filter || filterValue;
-        }
+        filter = filterOperator === OperatorTypes.AND ? filter && filterValue : filter || filterValue;
       }
       return filter;
     });

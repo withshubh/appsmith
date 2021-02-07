@@ -244,14 +244,10 @@ function* updateFormFields(
           header && header.key && header.key.toLowerCase() === CONTENT_TYPE,
       );
 
-      if (contentType && POST_BODY_FORMATS.includes(contentType.value)) {
-        displayFormat = {
+      displayFormat = contentType && POST_BODY_FORMATS.includes(contentType.value) ? {
           label: contentType.value,
           value: contentType.value,
-        };
-      } else {
-        displayFormat = POST_BODY_FORMAT_OPTIONS[3];
-      }
+        } : POST_BODY_FORMAT_OPTIONS[3];
     }
 
     yield put({

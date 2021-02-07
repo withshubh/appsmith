@@ -83,7 +83,7 @@ class Editor extends Component<Props> {
     return (
       <Hotkeys>
         <Hotkey
-          global={true}
+          global
           combo="mod + f"
           label="Search entities"
           onKeyDown={(e: any) => {
@@ -100,7 +100,7 @@ class Editor extends Component<Props> {
           }}
         />
         <Hotkey
-          global={true}
+          global
           combo="mod + c"
           label="Copy Widget"
           group="Canvas"
@@ -111,7 +111,7 @@ class Editor extends Component<Props> {
           }}
         />
         <Hotkey
-          global={true}
+          global
           combo="mod + v"
           label="Paste Widget"
           group="Canvas"
@@ -120,7 +120,7 @@ class Editor extends Component<Props> {
           }}
         />
         <Hotkey
-          global={true}
+          global
           combo="backspace"
           label="Delete Widget"
           group="Canvas"
@@ -131,7 +131,7 @@ class Editor extends Component<Props> {
           }}
         />
         <Hotkey
-          global={true}
+          global
           combo="del"
           label="Delete Widget"
           group="Canvas"
@@ -142,7 +142,7 @@ class Editor extends Component<Props> {
           }}
         />
         <Hotkey
-          global={true}
+          global
           combo="mod + x"
           label="Cut Widget"
           group="Canvas"

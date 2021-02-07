@@ -152,7 +152,7 @@ const OnboardingToolTip: React.FC<OnboardingToolTipProps> = (
       <Container className="t--onboarding-tooltip" isFinalStep={isFinalStep}>
         <Popover
           ref={popoverRef}
-          isOpen={true}
+          isOpen
           autoFocus={false}
           enforceFocus={false}
           boundary={"viewport"}

@@ -66,7 +66,7 @@ export const DatasourceStructure = (props: DatasourceStructureProps) => {
 
   return (
     <Popover
-      canEscapeKeyClose={true}
+      canEscapeKeyClose
       isOpen={active}
       className={`t--structure-template-menu`}
       minimal

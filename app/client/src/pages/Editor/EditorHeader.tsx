@@ -239,7 +239,7 @@ export const EditorHeader = (props: EditorHeaderProps) => {
                 className="t--application-share-btn header__application-share-btn"
               />
             }
-            canOutsideClickClose={true}
+            canOutsideClickClose
             Form={AppInviteUsersForm}
             orgId={orgId}
             applicationId={applicationId}

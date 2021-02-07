@@ -17,7 +17,7 @@ class DropDownControl extends BaseControl<DropDownControlProps> {
           filterable={false}
           itemRenderer={this.renderItem}
           onItemSelect={this.onItemSelect}
-          noResults={<MenuItem disabled={true} text="No results." />}
+          noResults={<MenuItem disabled text="No results." />}
           popoverProps={{
             minimal: true,
             usePortal: false,

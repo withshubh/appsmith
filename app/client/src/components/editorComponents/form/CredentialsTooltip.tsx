@@ -84,8 +84,8 @@ const HelperTooltip = (props: Props) => {
         <div className="infoIconDiv">
           <TooltipStyles />
           <Popover
-            autoFocus={true}
-            canEscapeKeyClose={true}
+            autoFocus
+            canEscapeKeyClose
             content={
               <div>
                 <span>How to get credentials: </span>

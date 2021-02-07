@@ -44,8 +44,8 @@ const ErrorTooltip = (props: Props) => {
     <Wrapper>
       <TooltipStyles />
       <Popover
-        autoFocus={true}
-        canEscapeKeyClose={true}
+        autoFocus
+        canEscapeKeyClose
         content={props.message}
         position="bottom"
         isOpen={props.isOpen && !!props.message}

@@ -66,7 +66,7 @@ class VideoWidget extends BaseWidget<VideoWidgetProps, WidgetState> {
           player={this._player}
           url={url}
           autoplay={autoPlay}
-          controls={true}
+          controls
           onPlay={() => {
             this.props.updateWidgetMetaProperty(
               "playState",

@@ -25,7 +25,7 @@ class MultiSelectControl extends BaseControl<MultiSelectControlProps> {
         selectedItems={selectedItems}
         tagInputProps={{ onRemove: this.onItemRemoved }}
         onItemSelect={this.onItemSelect}
-        noResults={<MenuItem disabled={true} text="No results." />}
+        noResults={<MenuItem disabled text="No results." />}
       />
     );
   }

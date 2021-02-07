@@ -171,7 +171,7 @@ export default function MemberSettings(props: PageProps) {
               size={Size.medium}
             ></Button>
           }
-          canOutsideClickClose={true}
+          canOutsideClickClose
           Form={OrgInviteUsersForm}
           orgId={orgId}
           title={`Invite Users to ${currentOrgName}`}

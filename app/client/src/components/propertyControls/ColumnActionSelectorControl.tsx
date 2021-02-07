@@ -55,7 +55,7 @@ class ColumnActionSelectorControl extends BaseControl<
                       columnAction,
                     )}
                     evaluatedValue={columnAction.label}
-                    isValid={true}
+                    isValid
                   />
                 </InputTextWrapper>
                 <Wrapper>
@@ -81,7 +81,7 @@ class ColumnActionSelectorControl extends BaseControl<
           text={"New Button"}
           icon={"plus"}
           color={"#FFFFFF"}
-          minimal={true}
+          minimal
           onClick={this.addColumnAction}
         />
       </React.Fragment>

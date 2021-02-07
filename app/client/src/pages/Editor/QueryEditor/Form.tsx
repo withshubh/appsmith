@@ -418,8 +418,8 @@ const QueryEditorForm: React.FC<Props> = (props: Props) => {
             <>
               <TooltipStyles />
               <Popover
-                autoFocus={true}
-                canEscapeKeyClose={true}
+                autoFocus
+                canEscapeKeyClose
                 content="You don’t have a Data Source to run this query"
                 position="bottom"
                 defaultIsOpen={false}

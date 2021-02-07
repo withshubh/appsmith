@@ -254,7 +254,7 @@ class DropDownComponent extends React.Component<DropDownComponentProps> {
             <StyledSingleDropDown
               className={this.props.isLoading ? Classes.SKELETON : ""}
               items={this.props.options}
-              filterable={true}
+              filterable
               itemRenderer={this.renderSingleSelectItem}
               onItemSelect={this.onItemSelect}
               disabled={this.props.disabled}

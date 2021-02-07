@@ -258,7 +258,7 @@ const views = {
   [ViewTypes.SELECTOR_VIEW]: function SelectorView(props: SelectorViewProps) {
     return (
       <FieldWrapper>
-        <ControlWrapper key={props.label} isAction={true}>
+        <ControlWrapper key={props.label} isAction>
           {props.label && <label>{props.label}</label>}
           <TreeDropdown
             optionTree={props.options}
@@ -277,7 +277,7 @@ const views = {
   },
   [ViewTypes.KEY_VALUE_VIEW]: function KeyValueView(props: KeyValueViewProps) {
     return (
-      <ControlWrapper key={props.label} isAction={true}>
+      <ControlWrapper key={props.label} isAction>
         <KeyValueComponent
           pairs={props.get(props.value, false) as DropdownOption[]}
           addLabel={"Query Params"}
@@ -289,7 +289,7 @@ const views = {
   [ViewTypes.TEXT_VIEW]: function TextView(props: TextViewProps) {
     return (
       <FieldWrapper>
-        <ControlWrapper key={props.label} isAction={true}>
+        <ControlWrapper key={props.label} isAction>
           {props.label && <label>{props.label}</label>}
           <InputText
             label={props.label}

@@ -120,8 +120,8 @@ const CompletionDialog = () => {
   return (
     <StyledDialog
       isOpen={isOpen}
-      canOutsideClickClose={true}
-      canEscapeKeyClose={true}
+      canOutsideClickClose
+      canEscapeKeyClose
       onClose={onClose}
     >
       <ApplicationPublishedWrapper>
@@ -187,7 +187,7 @@ const CompletionDialog = () => {
                   <span className="text">Invite users to your app</span>
                 </QuickLinksItem>
               }
-              canOutsideClickClose={true}
+              canOutsideClickClose
               Form={AppInviteUsersForm}
               orgId={orgId}
               applicationId={currentApplication?.id}

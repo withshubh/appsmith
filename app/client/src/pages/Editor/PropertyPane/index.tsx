@@ -74,7 +74,7 @@ class PropertyPane extends Component<
       )[0];
       return (
         <Popper
-          isOpen={true}
+          isOpen
           targetNode={el}
           zIndex={3}
           placement="right-start"

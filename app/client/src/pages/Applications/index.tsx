@@ -609,7 +609,7 @@ const ApplicationsSection = (props: any) => {
                         : SavingState.NOT_STARTED
                     }
                     isEditingDefault={false}
-                    fill={true}
+                    fill
                     onBlur={(value: string) => {
                       OrgNameChange(value, organization.id);
                     }}
@@ -684,7 +684,7 @@ const ApplicationsSection = (props: any) => {
                           size={Size.small}
                         />
                       }
-                      canOutsideClickClose={true}
+                      canOutsideClickClose
                       Form={OrgInviteUsersForm}
                       orgId={organization.id}
                       title={`Invite Users to ${organization.name}`}

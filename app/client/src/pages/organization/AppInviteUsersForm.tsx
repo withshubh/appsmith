@@ -102,7 +102,7 @@ const AppInviteUsersForm = (props: any) => {
       <CopyToClipBoard copyText={getViewApplicationURL()} />
 
       {canInviteToOrg && (
-        <OrgInviteUsersForm orgId={props.orgId} isApplicationInvite={true} />
+        <OrgInviteUsersForm orgId={props.orgId} isApplicationInvite />
       )}
     </>
   );

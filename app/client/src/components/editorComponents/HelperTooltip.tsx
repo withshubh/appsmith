@@ -65,8 +65,8 @@ const HelperTooltip = (props: Props) => {
     <React.Fragment>
       <TooltipStyles />
       <Popover
-        autoFocus={true}
-        canEscapeKeyClose={true}
+        autoFocus
+        canEscapeKeyClose
         content={props.description}
         position="bottom"
         defaultIsOpen={false}

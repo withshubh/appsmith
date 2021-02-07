@@ -184,14 +184,14 @@ const RapidApiEditorForm: React.FC<Props> = (props: Props) => {
             placeholder="Provider name"
             name="provider.name"
             leftImage={providerImage}
-            disabled={true}
+            disabled
             showLightningMenu={false}
           />
           <DynamicTextField
             placeholder="v1/method"
             name="actionConfiguration.path"
             leftIcon={FormIcons.SLASH_ICON}
-            disabled={true}
+            disabled
             showLightningMenu={false}
           />
         </FormRow>

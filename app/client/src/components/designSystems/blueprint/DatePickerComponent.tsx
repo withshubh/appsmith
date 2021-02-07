@@ -126,7 +126,7 @@ class DatePickerComponent extends React.Component<
             parseDate={this.parseDate}
             placeholder={"Select Date"}
             disabled={this.props.isDisabled}
-            showActionsBar={true}
+            showActionsBar
             timePrecision={TimePrecision.MINUTE}
             closeOnSelection
             onChange={this.onDateSelected}

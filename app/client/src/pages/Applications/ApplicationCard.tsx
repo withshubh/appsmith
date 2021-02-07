@@ -415,7 +415,7 @@ export const ApplicationCard = (props: ApplicationCardProps) => {
             savingState={
               isSavingName ? SavingState.STARTED : SavingState.NOT_STARTED
             }
-            fill={true}
+            fill
             onBlur={(value: string) => {
               props.update &&
                 props.update(props.application.id, {
@@ -430,7 +430,7 @@ export const ApplicationCard = (props: ApplicationCardProps) => {
             <ColorSelector
               defaultValue={selectedColor}
               colorPalette={themeDetails.theme.colors.appCardColors}
-              fill={true}
+              fill
               onSelect={updateColor}
             />
             <MenuDivider />
@@ -439,7 +439,7 @@ export const ApplicationCard = (props: ApplicationCardProps) => {
         {hasEditPermission && (
           <>
             <IconSelector
-              fill={true}
+              fill
               selectedIcon={appIcon}
               selectedColor={selectedColor}
               onSelect={updateIcon}

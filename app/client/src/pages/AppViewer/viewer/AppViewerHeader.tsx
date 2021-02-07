@@ -203,7 +203,7 @@ export const AppViewerHeader = (props: AppViewerHeaderProps) => {
                 orgId={currentOrgId}
                 applicationId={currentApplicationDetails.id}
                 title={currentApplicationDetails.name}
-                canOutsideClickClose={true}
+                canOutsideClickClose
               />
               {CTA && (
                 <HeaderRightItemContainer>{CTA}</HeaderRightItemContainer>

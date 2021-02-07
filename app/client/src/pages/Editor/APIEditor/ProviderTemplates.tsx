@@ -417,7 +417,7 @@ class ProviderTemplates extends React.Component<ProviderTemplatesProps> {
                           intent="none"
                           filled
                           size="small"
-                          disabled={true}
+                          disabled
                           className="addToPageBtn t--addToPageBtn"
                         />
                       ) : (

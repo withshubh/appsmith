@@ -47,16 +47,16 @@ class DropdownComponent extends Component<DropdownComponentProps> {
         <BaseButton
           icon-right="plus"
           accent="primary"
-          filled={true}
+          filled
           text={this.props.addItem.displayText}
           onClick={this.showTextBox}
         />
       );
       const editMode = (
-        <ControlGroup fill={true}>
+        <ControlGroup fill>
           <InputGroup inputRef={this.setNewItemTextInput} />
           <BaseButton
-            filled={true}
+            filled
             text={this.props.addItem.displayText}
             onClick={this.handleAddItem}
           ></BaseButton>
@@ -127,7 +127,7 @@ class DropdownComponent extends Component<DropdownComponentProps> {
         itemsEqual="value"
         popoverProps={{ minimal: true }}
         activeItem={this.props.selected}
-        noResults={<MenuItem disabled={true} text="No results." />}
+        noResults={<MenuItem disabled text="No results." />}
       >
         {this.props.toggle || (
           <BaseButton

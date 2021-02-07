@@ -49,7 +49,7 @@ const DropdownItem = (option: ContextDropdownOption) => (
   <StyledMenuItem
     key={option.value}
     onClick={option.onSelect}
-    shouldDismissPopover={true}
+    shouldDismissPopover
     text={option.label || option.value}
     intent={option.intent as BlueprintIntent}
     popoverProps={{

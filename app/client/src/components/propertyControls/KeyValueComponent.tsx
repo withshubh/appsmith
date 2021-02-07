@@ -174,7 +174,7 @@ export function KeyValueComponent(props: KeyValueComponentProps) {
         text={props.addLabel || "Option"}
         icon={"plus"}
         color={"#FFFFFF"}
-        minimal={true}
+        minimal
         onClick={addPair}
       />
     </React.Fragment>
